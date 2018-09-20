@@ -13,7 +13,7 @@ type: page
   <hr>
   <h2 id="{{category | first}}">{{ esc_ctgname }}</h2>
   <ul>
-    <li v-for="p in posts" v-if="p.categories.indexOf(hash) != -1">
+    <li v-for="p in posts" v-if="p.categories.indexOf(hash) != -1" style="font-size: 20px">
       <time>
         {{ esc_date }}
       </time>

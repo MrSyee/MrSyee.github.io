@@ -2,21 +2,23 @@
 #
 # Use of `relative_permalinks` ensures post links from the index work properly.
 permalink:           pretty
+
+
 #relative_permalinks: true
 
 # Setup
-title:               hoisharka's blog
-tagline:             'Front-end Dev Engineer'
-description:         '웹 개발자 김태헌입니다.'
-url:                 https://hoisharka.github.com
+title:               Syee's blog
+tagline:             'Machine Learning/Deep Learning Engineer'
+description:         "Syee's blog"
+url:                 https://MrSyee.github.io
 baseurl:             ''
 paginate:            5
 
 # About/contact
 author:
-  name:              KIM TAE HEON
-  url:               https://hoisharka.github.com
-  email:             hoisharka@gmail.com
+  name:              KIM KYUNG HWAN
+  url:               https://MrSyee.github.io
+  email:             khsyee@gmail.com
 
 # Custom vars
 version:             1.0.0
@@ -40,7 +42,7 @@ google_analytics:
   ua: 'UA-109898110-1'
 
 github:
-  repo: 'https://github.com/hoisharka/hoisharka.github.io'
+  repo: 'https://github.com/MrSyee'
 
 category_dir: category/
 tag_dir: tag/
