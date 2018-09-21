@@ -9,8 +9,8 @@ permalink:           pretty
 # Setup
 title:               Syee's blog
 tagline:             'Machine Learning/Deep Learning Engineer'
-description:         "Syee's blog"
-url:                 https://MrSyee.github.io
+description:         'Kim Kyunghwan'
+url:                 "https://MrSyee.github.io"
 baseurl:             ''
 paginate:            5
 
@@ -43,6 +43,10 @@ google_analytics:
 
 github:
   repo: 'https://github.com/MrSyee'
+
+# Social Profiles
+github_username:   MrSyee
+facebook_username: blue2856
 
 category_dir: category/
 tag_dir: tag/

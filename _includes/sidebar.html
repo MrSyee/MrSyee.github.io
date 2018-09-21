@@ -1,5 +1,7 @@
 <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
      styles, `#sidebar-checkbox` for behavior. -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
 
 <!-- Toggleable sidebar -->
@@ -26,14 +28,14 @@
     {% endif %}
     {% endfor %}
 
-    <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a>
+    <!-- <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub</a> -->
   </nav>
   <div>
-    <div class="sidebar-nav-item">Category</div>
+    <a id='category' class="sidebar-nav-item">Category</a>
     <nav class="content-ul">
       {% for category in site.categories %}
-      <a href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}"
-         class="sidebar-nav-item pl-3rem">
+      <a id='category_item' href="{{ root_url }}/{{ site.category_dir }}#{{ category | first }}"
+         class="sidebar-nav-item pl-3rem" style="display: none;">
                             <span class="name">
                                 {{ category | first }}
                             </span>
@@ -43,7 +45,7 @@
     </nav>
   </div>
   <div>
-    <div class="sidebar-nav-item">Tags</div>
+    <a class="sidebar-nav-item">Tags</a>
     <div class="tags-cloud">
       <div style="font-size: 16px">
         {% assign first = site.tags.first %}
@@ -91,14 +93,54 @@
     </div>
   </div>
   <div class="sidebar-item">
-    <p style="font-size: 14px">
-      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
-    </p>
+    <div class="col-lg-8 col-md-10 mx-auto" style="text-align:center; margin-bottom: 20px">
+        {% if site.twitter_username %}
+        <span class="fa-stack fa-lg">
+          <a href="https://www.twitter.com/{{ site.twitter_username }}">
+            <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+          </a>
+        </span>
+
+        {% endif %}
+        {% if site.facebook_username %}
+        <span class="fa-stack fa-lg">
+          <a href="https://www.facebook.com/{{ site.facebook_username }}">
+            <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+            <i class="fab fa-facebook fa-stack-1x fa-inverse"></i>
+          </a>
+        </span>
+        {% endif %}
+        {% if site.github_username %}
+        <span class="fa-stack fa-lg">
+          <a href="https://github.com/{{ site.github_username }}">
+            <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+            <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+          </a>
+        </span>
+        {% endif %}
+        <p style="font-size: 14px">
+          &copy; {{ site.time | date: '%Y' }}. All rights reserved.
+        </p>
+    </div>
   </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
   window.addEventListener('hashchange', function(){
     location.reload();
+  });
+
+  document.getElementById('category').addEventListener("click", function(){
+      $("#category_item").slideToggle('slow');
+   // if (document.getElementById('category_item').style.display == "none"){
+   //    document.getElementById('category_item').style.display="block";
+   //  }
+   // else{
+   //   $("#category_item").slideToggle('slow');
+   //    document.getElementById('category_item').style.display="none";
+   // }
   });
 </script>
