@@ -9,4 +9,10 @@ title: About
 </p>
 
 - E-mail : khsyee@gmail.com  
-- github : https://github.com/MrSyee
+- github : <https://github.com/MrSyee>
+
+#### Resume
+- 이력서
+  - [한글](../assets/file/resume_kr.pdf) / [English]()
+- 포트폴리오 :
+  - [한글](../assets/file/portfolio_kr.pdf) / [English]()

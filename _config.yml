@@ -44,6 +44,9 @@ google_analytics:
 github:
   repo: 'https://github.com/MrSyee'
 
+# Profile
+profile_img: "../assets/img/profile.png"
+
 # Social Profiles
 github_username:   MrSyee
 facebook_username: blue2856
