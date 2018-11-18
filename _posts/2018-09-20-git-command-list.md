@@ -168,3 +168,8 @@ tags: [git, github]
   - 추적하지 않는 하위 directory도 삭제한다.
 - `git clean -x`
   - `.gitignore`에 명시된 파일도 삭제한다.
+
+### 번외
+
+- 모든 remote에 push 하는 `git pushall` 명령어 만들기
+  - `git config --global alias.pushall '!git remote | xargs -L1 git push --all'`
