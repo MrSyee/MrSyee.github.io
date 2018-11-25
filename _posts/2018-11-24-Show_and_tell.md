@@ -116,7 +116,6 @@ $$ p_{t+1} = LSTM(x_t), t \in \{0, ...., N-1\} $$
 - METHOR
 - CIDER
 
-
 > 각 지표는 wiki나 google을 통해 검색해보면 잘 나와 있습니다.
 
 
