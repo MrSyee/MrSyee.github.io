@@ -3,6 +3,7 @@ title: Show and Tell - A Neural Caption Generator 논문 리뷰
 layout: post
 categories: [NLP]
 tags: [ai, nlp]
+use_math : true
 ---
 ## Introduction
 [Show and Tell: A Neural Caption Generator](https://arxiv.org/abs/1411.4555) 논문을 리뷰한 포스트입니다. 이미지를 보고 설명하는 글을 만들어내는 **Image Captioning** 문제를 CNN과 LSTM을 조합한 end-to-end 구조의 신경망으로 풀었고 그 당시 SOTA(State-of-the-art)를 갱신했다는 내용입니다.
