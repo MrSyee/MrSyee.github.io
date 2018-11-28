@@ -32,6 +32,7 @@ $$ {X(or Y) - K + 2P \over stride} + 1 $$
 ### Residual Learning (Skip Connection)
 ![image](https://user-images.githubusercontent.com/17582508/49163272-0f194080-f370-11e8-9d1b-e4477300cc36.png)
 > 이미지 출처 : Deep Residual Learning for Image Recognition 논문
+
 - 기존의 네트워크에 일종의 지름길(Skip Connection)을 추가한 구조
 - weight layer를 거친 output과 input을 더해주는 형태로 구성. 이를 **Residual learning block** 이라 함.
 - weight layer는 input과의 **차이** 만 학습하면 되기 때문에 학습이 더 좋아짐.
