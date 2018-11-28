@@ -71,5 +71,6 @@ $$ {X(or Y) - K + 2P \over stride} + 1 $$
 
 
 ### Reference
-- Designing more efficient convolution neural network 발표자료 : https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network
+- [Dongyi Kim님 발표자료](https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network)
 - Deep Residual Learning for Image Recognition 논문
+- MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications 논문
