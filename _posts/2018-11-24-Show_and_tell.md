@@ -2,7 +2,7 @@
 title: Show and Tell - A Neural Caption Generator 논문 리뷰
 layout: post
 categories: [NLP]
-tags: [ai, nlp]
+tags: [AI, NLP, image captioning]
 use_math : true
 ---
 ## Introduction

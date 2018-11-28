@@ -2,7 +2,7 @@
 title: Unity ML Agent - 실습 준비와 Push Block 예제 학습해보기
 layout: post
 categories: [RL]
-tags: [ai, reinforcement learning, unity]
+tags: [AI, reinforcement learning, unity]
 ---
 ## Introduction
 강화학습 공부, 더 나아가 강화학습을 실제 문제에 적용을 해야할 때 가장 걸림돌이 되는 것이 바로 강화학습 Agent를 학습(시뮬레이션) 시킬 **환경(envirionment)** 입니다. 로봇을 학습시키려면 직접 로봇을 만들어야 하고 자율주행 자동차를 학습시키려면 자동차를 직접 도로에 주행시켜야 합니다. 하지만 실제 환경을 이용해 시뮬레이션 하는 것은 많은 비용과 위험부담이 따릅니다. 이러한 문제 때문에 실제 환경에 학습하기 보다 현실과 유사한 **가상의 시뮬레이션 환경** 을 만들고 그 환경에서 학습시킨 모델을 실제 환경에 적용합니다. 그러나 이러한 현실과 유사한 가상 공간을 만드는 것도 전문가 수준이 아니면 쉽지 않습니다.  

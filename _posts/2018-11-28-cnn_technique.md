@@ -2,32 +2,36 @@
 title: CNN의 성능, 효율을 높이기 위한 기법들
 layout: post
 categories: [Image Processing]
-tags: [ai, image, cnn]
+tags: [AI, image processing, CNN]
 use_math : true
 ---
 ## Introduction
-CNN(Convolution Neural Network)은 주로 이미지 처리에 쓰이는 인공신경망 입니다. 	CNN이 처음 제안된 후부터 대부분의 연구들은 CNN의 성능에 주목하는 연구들이 많았습니다. 그러나 최근에는 Mobile 환경 또는 임베디드 시스템과 같은 작은 환경들에 CNN을 적용하기 위해 모델을 경량화하는 연구가 많이 진행되고 있습니다. 이러한 CNN의 성능 향상 또는 경량화하는 기법들을 간단하게 정리해서 소개해보려합니다.
+CNN(Convolution Neural Network)은 주로 이미지 처리에 쓰이는 인공신경망 입니다. CNN이 처음 제안된 후부터 대부분의 연구들은 CNN의 성능에 주목하는 연구들이 많았습니다. 그러나 최근에는 Mobile 환경 또는 임베디드 시스템과 같은 작은 환경에서 CNN을 적용하기 위해 모델을 경량화하는 연구가 많이 진행되고 있습니다. 이러한 CNN의 성능 향상 또는 경량화하는 기법들을 간단하게 정리해서 소개해보려합니다.
 
-#### Notation
+### Notation
 - M : 입력 채널 수
 - X, Y : 입력 사이즈 (width, height)
 - N : 필터 수
 - K : 필터 커널 사이즈
 - P : 패딩 사이즈
 
-#### Convolution layer에 의한 Size 계산
-- $$ {X(or Y) - K + 2P \over stride} + 1 $$
+### Convolution layer에 의한 Size 계산
+- conv layer를 통과했을 때 size  
+$$ {X(or Y) - K + 2P \over stride} + 1 $$
 
+## CNN techniques
 ### 3 x 3 Convolutional filters
-- 3x3 필터를 여러개 쌓는 것이 그 이상의 필터를 한 층 사용하는 것과 비교했을 때 성능은 유지되면서 파라미터 수는 적어진다.
+- **3x3 conv 필터** 를 여러개 쌓는 것이 그 이상의 크기를 갖는 conv 필터를 한 층 사용하는 것과 비교했을 때 성능은 유지되면서 파라미터 수는 적어진다.
 - 파라미터 수 : N(MKK +1)
-- if M=3, N =32
-- 5x5 layer 1개 : N(25M + 1) = 25MN +N = 2432
-- 3x3 layer 2개 : N(9M + 1) + N(9M +1) = 18MN + 2N = 1792
-- 큰 size의 필터를 사용했을 때보다 출력되는 feature size는 같으면서 필요한 파라미터 수가 줄어든다.
+  - if M=3, N =32
+  - 5x5 layer 1개 : N(25M + 1) = 25MN + N = 2432
+  - 3x3 layer 2개 : N(9M + 1) + N(9M +1) = 18MN + 2N = 1792
+  - 큰 size의 필터를 사용했을 때보다 출력되는 feature size는 같으면서 필요한 파라미터 수가 줄어든다.
 - ref : VGGNet
 
 ### Residual Learning (Skip Connection)
+![image](https://user-images.githubusercontent.com/17582508/49163272-0f194080-f370-11e8-9d1b-e4477300cc36.png)
+> 이미지 출처 : Deep Residual Learning for Image Recognition 논문
 - 기존의 네트워크에 일종의 지름길(Skip Connection)을 추가한 구조
 - weight layer를 거친 output과 input을 더해주는 형태로 구성. 이를 **Residual learning block** 이라 함.
 - weight layer는 input과의 **차이** 만 학습하면 되기 때문에 학습이 더 좋아짐.
@@ -35,17 +39,27 @@ CNN(Convolution Neural Network)은 주로 이미지 처리에 쓰이는 인공�
 - ref : ResNet
 
 ### Point-wise Convolutional
+![image](https://user-images.githubusercontent.com/17582508/49163740-2278db80-f371-11e8-915f-7dc64c46b93a.png)
+![image](https://user-images.githubusercontent.com/17582508/49163709-0d03b180-f371-11e8-8882-e8357625d242.png)
+> 이미지 출처 : [Dongyi Kim님 발표자료](https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network)
+
 - 1 x 1 Conv filter로 channel 단위의 convoution 연산을 한다. (1 x 1 x N)
 - channel간의 불필요한 뉴런을 없애는 pruning 효과.
 - channel reduction.
 - 파라미터 수 : N(M + 1)
 
 ### Depth-wise Convolution
+![image](https://user-images.githubusercontent.com/17582508/49163891-6e2b8500-f371-11e8-927c-186fcb22273f.png)
+> 이미지 출처 : [Dongyi Kim님 발표자료](https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network)
+
 - 필터 수가 채널 수가 같은 conv filter.
 - 각 채널에 대한 feature를 추출할 수 있다.
 - 파라미터 수 : N(MKK + 1)
 
 ### Depth-wise Separable Convolution
+![image](https://user-images.githubusercontent.com/17582508/49163973-961ae880-f371-11e8-9cf6-c4c3d38113b1.png)
+> 이미지 출처 : [Dongyi Kim님 발표자료](https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network)
+
 - Depth-wise conv + Point-wise conv 순서로 구성.
 - 채널 간의 conv 연산과 각 채널에 대한 conv연산을 분리해서 처리할 수 있는 구조.
 - 파라미터 수 : M(KK + 1) + N(M + 1)
@@ -53,3 +67,8 @@ CNN(Convolution Neural Network)은 주로 이미지 처리에 쓰이는 인공�
 - ref : Xception, Mobilenet v1
 
 ### SqueezeNet
+
+
+### Reference
+- Designing more efficient convolution neural network 발표자료 : https://www.slideshare.net/ssuser6135a1/designing-more-efficient-convolution-neural-network
+- Deep Residual Learning for Image Recognition 논문
