@@ -43,3 +43,6 @@ bower_components
 
 # back up
 backup
+
+# etc
+.vscode
