@@ -3,7 +3,6 @@ title: CNN의 성능, 효율을 높이기 위한 기법들
 layout: post
 categories: [Image Processing]
 tags: [AI, image processing, CNN]
-use_math : true
 ---
 ## Introduction
 CNN(Convolution Neural Network)은 주로 이미지 처리에 쓰이는 인공신경망 입니다. CNN이 처음 제안된 후부터 대부분의 연구들은 CNN의 성능에 주목하는 연구들이 많았습니다. 그러나 최근에는 Mobile 환경 또는 임베디드 시스템과 같은 작은 환경에서 CNN을 적용하기 위해 모델을 경량화하는 연구가 많이 진행되고 있습니다. 이러한 CNN의 성능 향상 또는 경량화하는 기법들을 간단하게 정리해서 소개해보려합니다.
