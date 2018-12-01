@@ -34,8 +34,10 @@
   {% endif %}
 
   <!-- Mathjax -->
+  {% if post.use_math %}
   {% include mathjax_support.html %}
-
+  {% endif %}
+  
   <script src="/js/vue.min.js"></script>
   <script src="/js/axios.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
