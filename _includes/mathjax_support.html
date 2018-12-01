@@ -1,18 +1,25 @@
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    // 해당 부분은 태그 옆에 숫자를 표시해준다. 싫다면 생략.
-    // TeX: {
-    //  equationNumbers: {
-    //    autoNumber: "AMS"
-    //  }
-    },
-    tex2jax: {
-      inlineMath: [ ['$','$'], ['\(', '\)'] ],
-      displayMath: [ ['$$','$$'] ],
-      processEscapes: true,
-    }
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <script>
+    MathJax.Hub.Config({
+      config: ["MMLorHTML.js"],
+      extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js"],
+      jax: ["input/TeX"],
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: false
+      },
+      TeX: {
+        TagSide: "right",
+        TagIndent: ".8em",
+        MultLineWidth: "85%",
+        equationNumbers: {
+          autoNumber: "AMS",
+        },
+        unicode: {
+          fonts: "STIXGeneral,'Arial Unicode MS'"
+        }
+      },
+    showProcessingMessages: false
   });
-</script>
-<script type="text/javascript"
-        src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
+  </script>
