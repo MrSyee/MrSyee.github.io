@@ -54,7 +54,7 @@ $$ {X(or Y) - K + 2P \over stride} + 1 $$
 
 - 필터 수가 채널 수가 같은 conv filter.
 - 각 채널에 대한 feature를 추출할 수 있다.
-- 파라미터 수 : N(MKK + 1)
+- 파라미터 수 : M(KK + 1)
 
 ### Depth-wise Separable Convolution
 ![image](https://user-images.githubusercontent.com/17582508/49163973-961ae880-f371-11e8-9cf6-c4c3d38113b1.png)
@@ -66,7 +66,6 @@ $$ {X(or Y) - K + 2P \over stride} + 1 $$
 - 3x3 필터 기준으로 기존 모델과 **약 9배** 의 모델 사이즈(파라미터 수) 차이를 보여줌.
 - ref : Xception, Mobilenet v1
 
-### SqueezeNet
 
 
 ### Reference
