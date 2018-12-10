@@ -22,7 +22,7 @@ tags: [AI, NLP, image captioning]
 - 이미지를 설명하는 문장을 자동으로 만들어 내는것(Image description)은 굉장히 어려운 문제다. (challenging task)
 - image classification과 object dection보다 훨씬 어렵다.  
 
-	### $\rightarrow$ 이미지 인식 + 자연어 표현까지 학습해야 되기 때문
+$\rightarrow$ 이미지 인식 + 자연어 표현까지 학습해야 되기 때문
 
 ---
 
@@ -60,11 +60,12 @@ tags: [AI, NLP, image captioning]
 # Model
 
 - Machine translation 모델과 같이
-- input **Image**가 주어졌을 때 정답 output  **Sequence**의 확률을 **maximizing**  
-- correct transcription $S$, input image $I$, parameter $\theta$
+- input **Image**가 주어졌을 때 정답 output  **Sequence**의 확률을 **maximizing** 
+- correct transcription $S$, input image $I$, parameter $\theta$  
 
-$$ \theta^* = \arg\max_\theta \sum_{(I,S)} log p(S|I; \theta)$$
-$$ logp(S|I) = \sum_{t=0}^{N} log p(S_t|I,S_0, ....,S_{t-1}) $$
+![](https://user-images.githubusercontent.com/17582508/49722827-e74ba600-fca8-11e8-9a5d-adcc6340ee62.png)
+![](https://user-images.githubusercontent.com/17582508/49722855-f7fc1c00-fca8-11e8-9c16-97e2f0c17942.png) 
+
 
 ---
 
@@ -76,6 +77,7 @@ $$ logp(S|I) = \sum_{t=0}^{N} log p(S_t|I,S_0, ....,S_{t-1}) $$
 ## Training
 - Encoder로 Deep CNN 사용.
 - Decoder로 LSTM 사용.
+
 $$ x_{t-1} = CNN(I) $$
 $$ x_t = W_eS_t, t \in \{0, ...., N-1\} $$
 $$ p_{t+1} = LSTM(x_t), t \in \{0, ...., N-1\} $$
