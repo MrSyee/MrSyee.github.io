@@ -52,7 +52,7 @@ PER은 버퍼에 보관하고 있는 td error의 총합에 대한 비율로 prio
 
 ![image](https://user-images.githubusercontent.com/17582508/51665898-18d1c400-2000-11e9-88d5-c3cf04d459e4.png)
 
-sampling의 경우도 O(log N)의 시간복잡도를 가진다. 논문에서는 각 transition에 대한 prior $p_i $ 에 대한 확률분포 ${p^{\alpha}_{i}}  \over {\sum_{k}p^{\alpha}_{k}}$ 를 따라 transition을 sampling 한다. 하지만 실제 Sum tree로 구현했을때 분포를 따로 계산하는 것이 아니라 tree를 순회하는 로직으로 확률분포에서 sampling 했을 때와 똑같은 똑같은 확률로 sampling 한다 (TD error가 높은 transition을 더 많이 sampling).  Sum tree가 위 그림과 같다고 가정 했을 때 sampling 하는 로직을 소개한다. [[OpenAI 코드](https://github.com/openai/baselines/blob/master/baselines/common/segment_tree.py) 참조함.]
+sampling의 경우도 O(log N)의 시간복잡도를 가진다. 논문에서는 각 transition에 대한 prior $p_i $ 에 대한 확률분포 ${p^{\alpha}\_{i}}  \over {\sum\_{k}p^{\alpha}\_{k}}$ 를 따라 transition을 sampling 한다. 하지만 실제 Sum tree로 구현했을때 분포를 따로 계산하는 것이 아니라 tree를 순회하는 로직으로 확률분포에서 sampling 했을 때와 똑같은 똑같은 확률로 sampling 한다 (TD error가 높은 transition을 더 많이 sampling).  Sum tree가 위 그림과 같다고 가정 했을 때 sampling 하는 로직을 소개한다. [[OpenAI 코드](https://github.com/openai/baselines/blob/master/baselines/common/segment_tree.py) 참조함.]
 
 - hyperparmeter 예시
   - batch size : 4
@@ -71,7 +71,7 @@ sampling의 경우도 O(log N)의 시간복잡도를 가진다. 논문에서는 
    - ![image](https://user-images.githubusercontent.com/17582508/51676832-26e10e00-201b-11e9-9ebb-17de98e4cef6.png)
    - 각 leaf node는 prior를 가지고 있으므로 prior에 따라 해당 prior의 node가 선택된다.
    - ex. 10 prior를 갖는 node는 10/24 확률로 선택됨.
-5. 위 로직을 따르면 해당 prior가 뽑힐 확률이 ${p^{\alpha}_{i}}  \over {\sum_{k}p^{\alpha}_{k}}​$ 된다.
+5. 위 로직을 따르면 해당 prior가 뽑힐 확률이 ${p^{\alpha}\_{i}}  \over {\sum\_{k}p^{\alpha}\_{k}}​$ 된다.
 
 
 
