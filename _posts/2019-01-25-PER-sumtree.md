@@ -1,8 +1,8 @@
 ---
-title: Priortized Experience Replay의 Sum tree 구현
+title: Prioritized Experience Replay(PER)의 Sum tree 구현
 layout: post
 categories: [RL]
-tags: [AI, Reinforcement learning]
+tags: [AI, reinforcement learning]
 ---
 ## Sum tree로 구현하는 PER
 
